@@ -8,7 +8,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load(fileName: '.env');
   pref = await SharedPreferences.getInstance();
-  token = pref.getString('token');
+  access_token = pref.getString('access_token');
   runApp(
     const MyApp(),
   );
