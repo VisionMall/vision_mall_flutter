@@ -64,8 +64,8 @@ class _AutoButtonState extends State<_AutoButton> {
         if (googleAuth == null) {
           _showErrorDialog();
         } else {
-          print(googleAuth.idToken);
           Navigator.pushAndRemoveUntil(
+            // ignore: use_build_context_synchronously
             context,
             MaterialPageRoute(builder: (builder) => const HomePage()),
             (predicate) => false,

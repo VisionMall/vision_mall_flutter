@@ -18,7 +18,6 @@ class AuthApi {
         return googleSignInAuthentication;
       }
     } catch (e) {
-      print('error : $e');
       return null;
     }
   }
@@ -29,14 +28,12 @@ class AuthApi {
         'code': token,
       });
       if (response.statusCode == 200) {
-        access_token = response.data;
-        print(access_token);
+        accessToken = response.data;
         return true;
       } else {
         return false;
       }
     } catch (e) {
-      print('error : $e');
       return false;
     }
   }
