@@ -26,8 +26,9 @@ class _IconState extends State<_Icon> with TickerProviderStateMixin {
     Future.delayed(
       const Duration(milliseconds: 3000),
       () {
-        if (token == null)
+        if (token == null) {
           Navigator.pushAndRemoveUntil(
+            // ignore: use_build_context_synchronously
             context,
             PageRouteBuilder(
               pageBuilder: (_, __, ___) => const AuthPage(),
@@ -39,8 +40,9 @@ class _IconState extends State<_Icon> with TickerProviderStateMixin {
             ),
             (predicate) => false,
           );
-        else {
+        } else {
           Navigator.pushAndRemoveUntil(
+            // ignore: use_build_context_synchronously
             context,
             PageRouteBuilder(
               pageBuilder: (_, __, ___) => const HomePage(),
