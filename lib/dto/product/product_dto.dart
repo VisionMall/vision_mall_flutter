@@ -12,16 +12,16 @@ enum ProductState {
 }
 
 @freezed
-class ProductListDto with _$ProductListDto {
-  factory ProductListDto({
+class ProductDto with _$ProductDto {
+  factory ProductDto({
     required int id,
     required int price,
     required int rating,
     required ProductState status,
     required List<ProductOptionDto> option,
     required String content,
-  }) = _ProductListDto;
+  }) = _ProductDto;
 
-  factory ProductListDto.fromJson(Map<String, dynamic> json) =>
-      _$ProductListDtoFromJson(json);
+  factory ProductDto.fromJson(Map<String, dynamic> json) =>
+      _$ProductDtoFromJson(json);
 }

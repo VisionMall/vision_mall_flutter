@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-ProductListDto _$ProductListDtoFromJson(Map<String, dynamic> json) {
-  return _ProductListDto.fromJson(json);
+ProductDto _$ProductDtoFromJson(Map<String, dynamic> json) {
+  return _ProductDto.fromJson(json);
 }
 
 /// @nodoc
-mixin _$ProductListDto {
+mixin _$ProductDto {
   int get id => throw _privateConstructorUsedError;
   int get price => throw _privateConstructorUsedError;
   int get rating => throw _privateConstructorUsedError;
@@ -27,21 +27,21 @@ mixin _$ProductListDto {
   List<ProductOptionDto> get option => throw _privateConstructorUsedError;
   String get content => throw _privateConstructorUsedError;
 
-  /// Serializes this ProductListDto to a JSON map.
+  /// Serializes this ProductDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-  /// Create a copy of ProductListDto
+  /// Create a copy of ProductDto
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $ProductListDtoCopyWith<ProductListDto> get copyWith =>
+  $ProductDtoCopyWith<ProductDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ProductListDtoCopyWith<$Res> {
-  factory $ProductListDtoCopyWith(
-          ProductListDto value, $Res Function(ProductListDto) then) =
-      _$ProductListDtoCopyWithImpl<$Res, ProductListDto>;
+abstract class $ProductDtoCopyWith<$Res> {
+  factory $ProductDtoCopyWith(
+          ProductDto value, $Res Function(ProductDto) then) =
+      _$ProductDtoCopyWithImpl<$Res, ProductDto>;
   @useResult
   $Res call(
       {int id,
@@ -53,16 +53,16 @@ abstract class $ProductListDtoCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ProductListDtoCopyWithImpl<$Res, $Val extends ProductListDto>
-    implements $ProductListDtoCopyWith<$Res> {
-  _$ProductListDtoCopyWithImpl(this._value, this._then);
+class _$ProductDtoCopyWithImpl<$Res, $Val extends ProductDto>
+    implements $ProductDtoCopyWith<$Res> {
+  _$ProductDtoCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of ProductListDto
+  /// Create a copy of ProductDto
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -104,11 +104,11 @@ class _$ProductListDtoCopyWithImpl<$Res, $Val extends ProductListDto>
 }
 
 /// @nodoc
-abstract class _$$ProductListDtoImplCopyWith<$Res>
-    implements $ProductListDtoCopyWith<$Res> {
-  factory _$$ProductListDtoImplCopyWith(_$ProductListDtoImpl value,
-          $Res Function(_$ProductListDtoImpl) then) =
-      __$$ProductListDtoImplCopyWithImpl<$Res>;
+abstract class _$$ProductDtoImplCopyWith<$Res>
+    implements $ProductDtoCopyWith<$Res> {
+  factory _$$ProductDtoImplCopyWith(
+          _$ProductDtoImpl value, $Res Function(_$ProductDtoImpl) then) =
+      __$$ProductDtoImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -121,14 +121,14 @@ abstract class _$$ProductListDtoImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ProductListDtoImplCopyWithImpl<$Res>
-    extends _$ProductListDtoCopyWithImpl<$Res, _$ProductListDtoImpl>
-    implements _$$ProductListDtoImplCopyWith<$Res> {
-  __$$ProductListDtoImplCopyWithImpl(
-      _$ProductListDtoImpl _value, $Res Function(_$ProductListDtoImpl) _then)
+class __$$ProductDtoImplCopyWithImpl<$Res>
+    extends _$ProductDtoCopyWithImpl<$Res, _$ProductDtoImpl>
+    implements _$$ProductDtoImplCopyWith<$Res> {
+  __$$ProductDtoImplCopyWithImpl(
+      _$ProductDtoImpl _value, $Res Function(_$ProductDtoImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ProductListDto
+  /// Create a copy of ProductDto
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -140,7 +140,7 @@ class __$$ProductListDtoImplCopyWithImpl<$Res>
     Object? option = null,
     Object? content = null,
   }) {
-    return _then(_$ProductListDtoImpl(
+    return _then(_$ProductDtoImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -171,8 +171,8 @@ class __$$ProductListDtoImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ProductListDtoImpl implements _ProductListDto {
-  _$ProductListDtoImpl(
+class _$ProductDtoImpl implements _ProductDto {
+  _$ProductDtoImpl(
       {required this.id,
       required this.price,
       required this.rating,
@@ -181,8 +181,8 @@ class _$ProductListDtoImpl implements _ProductListDto {
       required this.content})
       : _option = option;
 
-  factory _$ProductListDtoImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ProductListDtoImplFromJson(json);
+  factory _$ProductDtoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ProductDtoImplFromJson(json);
 
   @override
   final int id;
@@ -205,14 +205,14 @@ class _$ProductListDtoImpl implements _ProductListDto {
 
   @override
   String toString() {
-    return 'ProductListDto(id: $id, price: $price, rating: $rating, status: $status, option: $option, content: $content)';
+    return 'ProductDto(id: $id, price: $price, rating: $rating, status: $status, option: $option, content: $content)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ProductListDtoImpl &&
+            other is _$ProductDtoImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.price, price) || other.price == price) &&
             (identical(other.rating, rating) || other.rating == rating) &&
@@ -226,34 +226,33 @@ class _$ProductListDtoImpl implements _ProductListDto {
   int get hashCode => Object.hash(runtimeType, id, price, rating, status,
       const DeepCollectionEquality().hash(_option), content);
 
-  /// Create a copy of ProductListDto
+  /// Create a copy of ProductDto
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ProductListDtoImplCopyWith<_$ProductListDtoImpl> get copyWith =>
-      __$$ProductListDtoImplCopyWithImpl<_$ProductListDtoImpl>(
-          this, _$identity);
+  _$$ProductDtoImplCopyWith<_$ProductDtoImpl> get copyWith =>
+      __$$ProductDtoImplCopyWithImpl<_$ProductDtoImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ProductListDtoImplToJson(
+    return _$$ProductDtoImplToJson(
       this,
     );
   }
 }
 
-abstract class _ProductListDto implements ProductListDto {
-  factory _ProductListDto(
+abstract class _ProductDto implements ProductDto {
+  factory _ProductDto(
       {required final int id,
       required final int price,
       required final int rating,
       required final ProductState status,
       required final List<ProductOptionDto> option,
-      required final String content}) = _$ProductListDtoImpl;
+      required final String content}) = _$ProductDtoImpl;
 
-  factory _ProductListDto.fromJson(Map<String, dynamic> json) =
-      _$ProductListDtoImpl.fromJson;
+  factory _ProductDto.fromJson(Map<String, dynamic> json) =
+      _$ProductDtoImpl.fromJson;
 
   @override
   int get id;
@@ -268,10 +267,10 @@ abstract class _ProductListDto implements ProductListDto {
   @override
   String get content;
 
-  /// Create a copy of ProductListDto
+  /// Create a copy of ProductDto
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ProductListDtoImplCopyWith<_$ProductListDtoImpl> get copyWith =>
+  _$$ProductDtoImplCopyWith<_$ProductDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
