@@ -26,7 +26,7 @@ class _IconState extends State<_Icon> with TickerProviderStateMixin {
     Future.delayed(
       const Duration(milliseconds: 3000),
       () {
-        if (token == null) {
+        if (accessToken == null) {
           Navigator.pushAndRemoveUntil(
             // ignore: use_build_context_synchronously
             context,
