@@ -1,4 +1,4 @@
-part of '../home_page.dart';
+part of '../main_page.dart';
 
 class _Topbar extends StatelessWidget implements PreferredSizeWidget {
   const _Topbar();
@@ -19,14 +19,14 @@ class _Topbar extends StatelessWidget implements PreferredSizeWidget {
       ),
       actions: [
         IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            Icons.alarm,
-            color: Colors.black,
-          ),
-        ),
-        IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (builder) => const SearchPage(),
+              ),
+            );
+          },
           icon: const Icon(
             Icons.search,
             color: Colors.black,

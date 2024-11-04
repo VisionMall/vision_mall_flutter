@@ -104,6 +104,12 @@
       "languageVersion": "3.3"
     },
     {
+      "name": "flutter_tts",
+      "rootUri": "file:///Users/park-yuhyeon/.pub-cache/hosted/pub.dev/flutter_tts-4.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
+    },
+    {
       "name": "flutter_web_plugins",
       "rootUri": "file:///opt/homebrew/Caskroom/flutter/3.24.4/flutter/packages/flutter_web_plugins",
       "packageUri": "lib/",
@@ -156,6 +162,12 @@
       "rootUri": "file:///Users/park-yuhyeon/.pub-cache/hosted/pub.dev/http_parser-4.0.2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "json_annotation",
+      "rootUri": "file:///Users/park-yuhyeon/.pub-cache/hosted/pub.dev/json_annotation-4.9.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
     },
     {
       "name": "leak_tracker",
@@ -230,6 +242,12 @@
       "languageVersion": "3.2"
     },
     {
+      "name": "pedantic",
+      "rootUri": "file:///Users/park-yuhyeon/.pub-cache/hosted/pub.dev/pedantic-1.11.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "petitparser",
       "rootUri": "file:///Users/park-yuhyeon/.pub-cache/hosted/pub.dev/petitparser-6.0.2",
       "packageUri": "lib/",
@@ -300,6 +318,18 @@
       "rootUri": "file:///Users/park-yuhyeon/.pub-cache/hosted/pub.dev/source_span-1.10.0",
       "packageUri": "lib/",
       "languageVersion": "2.18"
+    },
+    {
+      "name": "speech_to_text",
+      "rootUri": "file:///Users/park-yuhyeon/.pub-cache/hosted/pub.dev/speech_to_text-7.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "speech_to_text_platform_interface",
+      "rootUri": "file:///Users/park-yuhyeon/.pub-cache/hosted/pub.dev/speech_to_text_platform_interface-2.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
     },
     {
       "name": "stack_trace",
@@ -392,7 +422,7 @@
       "languageVersion": "3.5"
     }
   ],
-  "generated": "2024-11-02T14:37:59.565474Z",
+  "generated": "2024-11-03T03:46:56.210734Z",
   "generator": "pub",
   "generatorVersion": "3.5.4",
   "flutterRoot": "file:///opt/homebrew/Caskroom/flutter/3.24.4/flutter",

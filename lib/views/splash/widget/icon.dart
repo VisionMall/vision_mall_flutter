@@ -22,6 +22,9 @@ class _IconState extends State<_Icon> with TickerProviderStateMixin {
 
   @override
   void initState() {
+    tts = FlutterTts();
+    tts.setLanguage('ko-KR');
+    tts.setSpeechRate(0.5);
     _animationController.forward();
     Future.delayed(
       const Duration(milliseconds: 3000),
@@ -45,7 +48,7 @@ class _IconState extends State<_Icon> with TickerProviderStateMixin {
             // ignore: use_build_context_synchronously
             context,
             PageRouteBuilder(
-              pageBuilder: (_, __, ___) => const HomePage(),
+              pageBuilder: (_, __, ___) => const MainPage(),
               transitionDuration: const Duration(milliseconds: 250),
               transitionsBuilder: (_, a, __, c) => FadeTransition(
                 opacity: a,

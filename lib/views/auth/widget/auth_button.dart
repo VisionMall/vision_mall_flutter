@@ -58,21 +58,23 @@ class _AutoButtonState extends State<_AutoButton> {
 
   @override
   Widget build(BuildContext context) {
-    return IconButton(
-      onPressed: () async {
+    return GestureDetector(
+      onLongPress: () => tts.speak('구글 로그인 버튼'),
+      onTap: () async {
         final googleAuth = await AuthApi().loginGoogle();
         if (googleAuth == null) {
           _showErrorDialog();
         } else {
+          AuthApi().authToken(googleAuth.idToken!);
           Navigator.pushAndRemoveUntil(
             // ignore: use_build_context_synchronously
             context,
-            MaterialPageRoute(builder: (builder) => const HomePage()),
+            MaterialPageRoute(builder: (builder) => const MainPage()),
             (predicate) => false,
           );
         }
       },
-      icon: SvgPicture.asset(
+      child: SvgPicture.asset(
         'assets/icon/ios_neutral_rd_ctn.svg',
         height: 55,
       ),

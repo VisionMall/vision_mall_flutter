@@ -2,26 +2,27 @@ part of '../home_page.dart';
 
 class _Scaffold extends StatelessWidget {
   const _Scaffold({
-    required this.topbar,
-    required this.bottomBar,
-    required this.floatingActionButton,
-    required this.userButton,
+    required this.firstProduct,
+    required this.elseProduct,
   });
 
-  final PreferredSizeWidget topbar;
-  final Widget bottomBar;
-  final Widget floatingActionButton;
-  final Widget userButton;
+  final Widget firstProduct;
+  final Widget elseProduct;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: topbar,
-      body: Column(
-        children: [userButton],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            firstProduct,
+            const SizedBox(
+              height: 20,
+            ),
+            elseProduct
+          ],
+        ),
       ),
-      floatingActionButton: floatingActionButton,
-      bottomNavigationBar: bottomBar,
     );
   }
 }

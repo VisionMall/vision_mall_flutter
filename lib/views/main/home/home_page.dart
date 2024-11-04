@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:vision_mall/components/product_preview.dart';
+import 'package:vision_mall/data.dart';
 part 'widget/scaffold.dart';
-part 'widget/topbar.dart';
-part 'widget/bottom_bar.dart';
-part 'widget/floating_action_button.dart';
-part 'widget/user_button.dart';
+part 'widget/first_product.dart';
+part './widget/else_product.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -11,10 +11,8 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const _Scaffold(
-      topbar: _Topbar(),
-      bottomBar: _BottomBar(),
-      floatingActionButton: _FloatingActionButton(),
-      userButton: _UserButton(),
+      firstProduct: _FirstProduct(title: '봄까지 입기 좋아요', content: '맨투맨 & 후드 | 오래갈 이너 만나보기'),
+      elseProduct: _ElseProduct(),
     );
   }
 }
