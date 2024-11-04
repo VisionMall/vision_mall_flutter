@@ -20,6 +20,10 @@ class _IconState extends State<_Icon> with TickerProviderStateMixin {
     curve: Curves.ease,
   );
 
+  fetcApi() async {
+    products = await ProductApi().getProducts();
+  }
+
   @override
   void initState() {
     tts = FlutterTts();
@@ -44,6 +48,7 @@ class _IconState extends State<_Icon> with TickerProviderStateMixin {
             (predicate) => false,
           );
         } else {
+          fetcApi();
           Navigator.pushAndRemoveUntil(
             // ignore: use_build_context_synchronously
             context,

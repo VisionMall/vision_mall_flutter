@@ -18,18 +18,21 @@ class _Topbar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
       actions: [
-        IconButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (builder) => const SearchPage(),
-              ),
-            );
-          },
-          icon: const Icon(
-            Icons.search,
-            color: Colors.black,
+        GestureDetector(
+          onLongPress: () => tts.speak('검색'),
+          child: IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (builder) => const SearchPage(),
+                ),
+              );
+            },
+            icon: const Icon(
+              Icons.search,
+              color: Colors.black,
+            ),
           ),
         )
       ],

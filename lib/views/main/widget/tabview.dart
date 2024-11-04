@@ -10,7 +10,11 @@ class _TabView extends StatelessWidget {
   Widget build(BuildContext context) {
     return TabBarView(
       controller: controller,
-      children: const [LikePage(), HomePage(), UserPage()],
+      children: const [
+        LikePage(),
+        HomePage(),
+        UserPage(),
+      ],
     );
   }
 }

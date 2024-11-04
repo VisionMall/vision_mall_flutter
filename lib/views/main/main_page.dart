@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:speech_to_text/speech_recognition_result.dart';
+import 'package:speech_to_text/speech_to_text.dart';
+import 'package:vision_mall/data.dart';
 import 'package:vision_mall/views/main/home/home_page.dart';
 import 'package:vision_mall/views/main/like/like_page.dart';
 import 'package:vision_mall/views/main/user/user_page.dart';

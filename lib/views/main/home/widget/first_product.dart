@@ -19,11 +19,7 @@ class _FirstProduct extends StatelessWidget {
         child: Stack(
           alignment: Alignment.bottomCenter,
           children: [
-            Container(
-              width: width,
-              height: width,
-              decoration: const BoxDecoration(color: Colors.grey),
-            ),
+            Image.asset('assets/icon/first_models.webp'),
             Padding(
               padding: EdgeInsets.symmetric(vertical: width / 10),
               child: Column(

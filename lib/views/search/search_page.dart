@@ -25,13 +25,13 @@ class SearchPage extends StatelessWidget {
                       cursorColor: Colors.black,
                       controller: searchTextEditingControlle,
                       decoration: const InputDecoration(
-                        border: OutlineInputBorder(
+                        border: UnderlineInputBorder(
                           borderSide: BorderSide(
                             color: Colors.black,
                             width: 1,
                           ),
                         ),
-                        focusedBorder: OutlineInputBorder(
+                        focusedBorder: UnderlineInputBorder(
                           borderSide: BorderSide(
                             color: Colors.black,
                             width: 1,

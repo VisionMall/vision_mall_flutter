@@ -65,7 +65,8 @@ class _AutoButtonState extends State<_AutoButton> {
         if (googleAuth == null) {
           _showErrorDialog();
         } else {
-          AuthApi().authToken(googleAuth.idToken!);
+          await AuthApi().authToken(googleAuth.idToken!);
+          products = await ProductApi().getProducts();
           Navigator.pushAndRemoveUntil(
             // ignore: use_build_context_synchronously
             context,

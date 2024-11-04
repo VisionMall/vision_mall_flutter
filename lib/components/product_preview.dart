@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:intl/intl.dart';
 import 'package:vision_mall/data.dart';
 import 'package:vision_mall/views/detail/detail_page.dart';
 
@@ -25,6 +26,7 @@ class _ProductPreviewComponentsState extends State<ProductPreviewComponents> {
 
   @override
   Widget build(BuildContext context) {
+    final formattedPrice = NumberFormat('#,###').format(int.parse(widget.price.replaceAll(',', '')));
     return GestureDetector(
       onLongPress: () {
         tts.speak('${widget.brand}. ${widget.goods}');
@@ -107,7 +109,7 @@ class _ProductPreviewComponentsState extends State<ProductPreviewComponents> {
                       ),
                       const SizedBox(width: 5),
                       Text(
-                        widget.price,
+                        '$formattedPrice원',
                         style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w500),
                       ),
                     ],

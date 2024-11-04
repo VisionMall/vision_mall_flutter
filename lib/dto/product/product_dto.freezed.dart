@@ -25,7 +25,9 @@ mixin _$ProductDto {
   int get rating => throw _privateConstructorUsedError;
   ProductState get status => throw _privateConstructorUsedError;
   List<ProductOptionDto> get option => throw _privateConstructorUsedError;
+  String get title => throw _privateConstructorUsedError;
   String get content => throw _privateConstructorUsedError;
+  List<String> get images => throw _privateConstructorUsedError;
 
   /// Serializes this ProductDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -49,7 +51,9 @@ abstract class $ProductDtoCopyWith<$Res> {
       int rating,
       ProductState status,
       List<ProductOptionDto> option,
-      String content});
+      String title,
+      String content,
+      List<String> images});
 }
 
 /// @nodoc
@@ -72,7 +76,9 @@ class _$ProductDtoCopyWithImpl<$Res, $Val extends ProductDto>
     Object? rating = null,
     Object? status = null,
     Object? option = null,
+    Object? title = null,
     Object? content = null,
+    Object? images = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -95,10 +101,18 @@ class _$ProductDtoCopyWithImpl<$Res, $Val extends ProductDto>
           ? _value.option
           : option // ignore: cast_nullable_to_non_nullable
               as List<ProductOptionDto>,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
       content: null == content
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
               as String,
+      images: null == images
+          ? _value.images
+          : images // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ) as $Val);
   }
 }
@@ -117,7 +131,9 @@ abstract class _$$ProductDtoImplCopyWith<$Res>
       int rating,
       ProductState status,
       List<ProductOptionDto> option,
-      String content});
+      String title,
+      String content,
+      List<String> images});
 }
 
 /// @nodoc
@@ -138,7 +154,9 @@ class __$$ProductDtoImplCopyWithImpl<$Res>
     Object? rating = null,
     Object? status = null,
     Object? option = null,
+    Object? title = null,
     Object? content = null,
+    Object? images = null,
   }) {
     return _then(_$ProductDtoImpl(
       id: null == id
@@ -161,10 +179,18 @@ class __$$ProductDtoImplCopyWithImpl<$Res>
           ? _value._option
           : option // ignore: cast_nullable_to_non_nullable
               as List<ProductOptionDto>,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
       content: null == content
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
               as String,
+      images: null == images
+          ? _value._images
+          : images // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ));
   }
 }
@@ -178,8 +204,11 @@ class _$ProductDtoImpl implements _ProductDto {
       required this.rating,
       required this.status,
       required final List<ProductOptionDto> option,
-      required this.content})
-      : _option = option;
+      required this.title,
+      required this.content,
+      required final List<String> images})
+      : _option = option,
+        _images = images;
 
   factory _$ProductDtoImpl.fromJson(Map<String, dynamic> json) =>
       _$$ProductDtoImplFromJson(json);
@@ -201,11 +230,20 @@ class _$ProductDtoImpl implements _ProductDto {
   }
 
   @override
+  final String title;
+  @override
   final String content;
+  final List<String> _images;
+  @override
+  List<String> get images {
+    if (_images is EqualUnmodifiableListView) return _images;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_images);
+  }
 
   @override
   String toString() {
-    return 'ProductDto(id: $id, price: $price, rating: $rating, status: $status, option: $option, content: $content)';
+    return 'ProductDto(id: $id, price: $price, rating: $rating, status: $status, option: $option, title: $title, content: $content, images: $images)';
   }
 
   @override
@@ -218,13 +256,23 @@ class _$ProductDtoImpl implements _ProductDto {
             (identical(other.rating, rating) || other.rating == rating) &&
             (identical(other.status, status) || other.status == status) &&
             const DeepCollectionEquality().equals(other._option, _option) &&
-            (identical(other.content, content) || other.content == content));
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.content, content) || other.content == content) &&
+            const DeepCollectionEquality().equals(other._images, _images));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, price, rating, status,
-      const DeepCollectionEquality().hash(_option), content);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      price,
+      rating,
+      status,
+      const DeepCollectionEquality().hash(_option),
+      title,
+      content,
+      const DeepCollectionEquality().hash(_images));
 
   /// Create a copy of ProductDto
   /// with the given fields replaced by the non-null parameter values.
@@ -249,7 +297,9 @@ abstract class _ProductDto implements ProductDto {
       required final int rating,
       required final ProductState status,
       required final List<ProductOptionDto> option,
-      required final String content}) = _$ProductDtoImpl;
+      required final String title,
+      required final String content,
+      required final List<String> images}) = _$ProductDtoImpl;
 
   factory _ProductDto.fromJson(Map<String, dynamic> json) =
       _$ProductDtoImpl.fromJson;
@@ -265,7 +315,11 @@ abstract class _ProductDto implements ProductDto {
   @override
   List<ProductOptionDto> get option;
   @override
+  String get title;
+  @override
   String get content;
+  @override
+  List<String> get images;
 
   /// Create a copy of ProductDto
   /// with the given fields replaced by the non-null parameter values.

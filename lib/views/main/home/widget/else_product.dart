@@ -14,17 +14,18 @@ class _ElseProduct extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20),
         scrollDirection: Axis.horizontal,
         itemBuilder: (BuildContext context, int index) {
-          return const ProductPreviewComponents(
-            brand: '아디다스',
-            goods: '아디다스 3줄 점퍼',
-            discount: '15%',
-            price: '79,900원',
+          final statusText = products[index].status == ProductState.ON_SALE ? "ON SALE" : "SOLD OUT";
+          return ProductPreviewComponents(
+            brand: products[index].title,
+            goods: products[index].content,
+            discount: statusText,
+            price: products[index].price.toString(),
           );
         },
         separatorBuilder: (BuildContext context, int index) {
           return const SizedBox(width: 10); // Spacing between items
         },
-        itemCount: 10,
+        itemCount: products.length,
       ),
     );
   }

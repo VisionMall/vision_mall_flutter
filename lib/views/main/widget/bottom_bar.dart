@@ -16,23 +16,32 @@ class _BottomBar extends StatelessWidget {
       onTap: (value) => controller.animateTo(value),
       showSelectedLabels: false,
       showUnselectedLabels: false,
-      items: const [
+      items: [
         BottomNavigationBarItem(
-            icon: Icon(
-              Icons.favorite,
-              size: 35,
+            icon: GestureDetector(
+              onLongPress: () => tts.speak('위시리스트'),
+              child: const Icon(
+                Icons.favorite,
+                size: 35,
+              ),
             ),
             label: '2'),
         BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home,
-              size: 35,
+            icon: GestureDetector(
+              onLongPress: () => tts.speak('홈'),
+              child: const Icon(
+                Icons.home,
+                size: 35,
+              ),
             ),
             label: 'home'),
         BottomNavigationBarItem(
-            icon: Icon(
-              Icons.person,
-              size: 35,
+            icon: GestureDetector(
+              onLongPress: () => tts.speak('사용자 정보'),
+              child: const Icon(
+                Icons.person,
+                size: 35,
+              ),
             ),
             label: '3'),
       ],

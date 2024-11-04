@@ -62,5 +62,9 @@
     </array>
 <key>NSMicrophoneUsageDescription</key>
 <string>This app needs access to the microphone for speech recognition</string>
+<key>NSSpeechRecognitionUsageDescription</key>
+<string>This app uses speech recognition to assist visually impaired users by converting speech to text and providing relevant responses.</string>
+<key>NSMicrophoneUsageDescription</key>
+<string>This app needs access to the microphone to recognize user speech, enabling audio interaction for visually impaired users.</string>
 </dict>
 </plist>

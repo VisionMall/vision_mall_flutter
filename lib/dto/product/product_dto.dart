@@ -19,9 +19,10 @@ class ProductDto with _$ProductDto {
     required int rating,
     required ProductState status,
     required List<ProductOptionDto> option,
+    required String title,
     required String content,
+    required List<String> images,
   }) = _ProductDto;
 
-  factory ProductDto.fromJson(Map<String, dynamic> json) =>
-      _$ProductDtoFromJson(json);
+  factory ProductDto.fromJson(Map<String, dynamic> json) => _$ProductDtoFromJson(json);
 }

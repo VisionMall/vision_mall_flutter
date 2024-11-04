@@ -20,13 +20,12 @@ UserInfoDto _$UserInfoDtoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UserInfoDto {
-  String get id => throw _privateConstructorUsedError;
-  String get sub => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get picture => throw _privateConstructorUsedError;
-  String get login_at => throw _privateConstructorUsedError;
-  String get created_at => throw _privateConstructorUsedError;
+  String get address => throw _privateConstructorUsedError;
+  List<dynamic> get reviews => throw _privateConstructorUsedError;
+  List<dynamic> get order => throw _privateConstructorUsedError;
 
   /// Serializes this UserInfoDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -45,13 +44,12 @@ abstract class $UserInfoDtoCopyWith<$Res> {
       _$UserInfoDtoCopyWithImpl<$Res, UserInfoDto>;
   @useResult
   $Res call(
-      {String id,
-      String sub,
-      String email,
+      {String email,
       String name,
       String picture,
-      String login_at,
-      String created_at});
+      String address,
+      List<dynamic> reviews,
+      List<dynamic> order});
 }
 
 /// @nodoc
@@ -69,23 +67,14 @@ class _$UserInfoDtoCopyWithImpl<$Res, $Val extends UserInfoDto>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? sub = null,
     Object? email = null,
     Object? name = null,
     Object? picture = null,
-    Object? login_at = null,
-    Object? created_at = null,
+    Object? address = null,
+    Object? reviews = null,
+    Object? order = null,
   }) {
     return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      sub: null == sub
-          ? _value.sub
-          : sub // ignore: cast_nullable_to_non_nullable
-              as String,
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -98,14 +87,18 @@ class _$UserInfoDtoCopyWithImpl<$Res, $Val extends UserInfoDto>
           ? _value.picture
           : picture // ignore: cast_nullable_to_non_nullable
               as String,
-      login_at: null == login_at
-          ? _value.login_at
-          : login_at // ignore: cast_nullable_to_non_nullable
+      address: null == address
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
               as String,
-      created_at: null == created_at
-          ? _value.created_at
-          : created_at // ignore: cast_nullable_to_non_nullable
-              as String,
+      reviews: null == reviews
+          ? _value.reviews
+          : reviews // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>,
+      order: null == order
+          ? _value.order
+          : order // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>,
     ) as $Val);
   }
 }
@@ -119,13 +112,12 @@ abstract class _$$UserInfoDtoImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String id,
-      String sub,
-      String email,
+      {String email,
       String name,
       String picture,
-      String login_at,
-      String created_at});
+      String address,
+      List<dynamic> reviews,
+      List<dynamic> order});
 }
 
 /// @nodoc
@@ -141,23 +133,14 @@ class __$$UserInfoDtoImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? sub = null,
     Object? email = null,
     Object? name = null,
     Object? picture = null,
-    Object? login_at = null,
-    Object? created_at = null,
+    Object? address = null,
+    Object? reviews = null,
+    Object? order = null,
   }) {
     return _then(_$UserInfoDtoImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      sub: null == sub
-          ? _value.sub
-          : sub // ignore: cast_nullable_to_non_nullable
-              as String,
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -170,14 +153,18 @@ class __$$UserInfoDtoImplCopyWithImpl<$Res>
           ? _value.picture
           : picture // ignore: cast_nullable_to_non_nullable
               as String,
-      login_at: null == login_at
-          ? _value.login_at
-          : login_at // ignore: cast_nullable_to_non_nullable
+      address: null == address
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
               as String,
-      created_at: null == created_at
-          ? _value.created_at
-          : created_at // ignore: cast_nullable_to_non_nullable
-              as String,
+      reviews: null == reviews
+          ? _value._reviews
+          : reviews // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>,
+      order: null == order
+          ? _value._order
+          : order // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>,
     ));
   }
 }
@@ -186,21 +173,18 @@ class __$$UserInfoDtoImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$UserInfoDtoImpl implements _UserInfoDto {
   _$UserInfoDtoImpl(
-      {required this.id,
-      required this.sub,
-      required this.email,
+      {required this.email,
       required this.name,
       required this.picture,
-      required this.login_at,
-      required this.created_at});
+      required this.address,
+      required final List<dynamic> reviews,
+      required final List<dynamic> order})
+      : _reviews = reviews,
+        _order = order;
 
   factory _$UserInfoDtoImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserInfoDtoImplFromJson(json);
 
-  @override
-  final String id;
-  @override
-  final String sub;
   @override
   final String email;
   @override
@@ -208,13 +192,26 @@ class _$UserInfoDtoImpl implements _UserInfoDto {
   @override
   final String picture;
   @override
-  final String login_at;
+  final String address;
+  final List<dynamic> _reviews;
   @override
-  final String created_at;
+  List<dynamic> get reviews {
+    if (_reviews is EqualUnmodifiableListView) return _reviews;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_reviews);
+  }
+
+  final List<dynamic> _order;
+  @override
+  List<dynamic> get order {
+    if (_order is EqualUnmodifiableListView) return _order;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_order);
+  }
 
   @override
   String toString() {
-    return 'UserInfoDto(id: $id, sub: $sub, email: $email, name: $name, picture: $picture, login_at: $login_at, created_at: $created_at)';
+    return 'UserInfoDto(email: $email, name: $name, picture: $picture, address: $address, reviews: $reviews, order: $order)';
   }
 
   @override
@@ -222,21 +219,24 @@ class _$UserInfoDtoImpl implements _UserInfoDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserInfoDtoImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.sub, sub) || other.sub == sub) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.picture, picture) || other.picture == picture) &&
-            (identical(other.login_at, login_at) ||
-                other.login_at == login_at) &&
-            (identical(other.created_at, created_at) ||
-                other.created_at == created_at));
+            (identical(other.address, address) || other.address == address) &&
+            const DeepCollectionEquality().equals(other._reviews, _reviews) &&
+            const DeepCollectionEquality().equals(other._order, _order));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType, id, sub, email, name, picture, login_at, created_at);
+      runtimeType,
+      email,
+      name,
+      picture,
+      address,
+      const DeepCollectionEquality().hash(_reviews),
+      const DeepCollectionEquality().hash(_order));
 
   /// Create a copy of UserInfoDto
   /// with the given fields replaced by the non-null parameter values.
@@ -256,21 +256,16 @@ class _$UserInfoDtoImpl implements _UserInfoDto {
 
 abstract class _UserInfoDto implements UserInfoDto {
   factory _UserInfoDto(
-      {required final String id,
-      required final String sub,
-      required final String email,
+      {required final String email,
       required final String name,
       required final String picture,
-      required final String login_at,
-      required final String created_at}) = _$UserInfoDtoImpl;
+      required final String address,
+      required final List<dynamic> reviews,
+      required final List<dynamic> order}) = _$UserInfoDtoImpl;
 
   factory _UserInfoDto.fromJson(Map<String, dynamic> json) =
       _$UserInfoDtoImpl.fromJson;
 
-  @override
-  String get id;
-  @override
-  String get sub;
   @override
   String get email;
   @override
@@ -278,9 +273,11 @@ abstract class _UserInfoDto implements UserInfoDto {
   @override
   String get picture;
   @override
-  String get login_at;
+  String get address;
   @override
-  String get created_at;
+  List<dynamic> get reviews;
+  @override
+  List<dynamic> get order;
 
   /// Create a copy of UserInfoDto
   /// with the given fields replaced by the non-null parameter values.

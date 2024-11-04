@@ -6,15 +6,13 @@ part 'user_info_dto.g.dart';
 @freezed
 class UserInfoDto with _$UserInfoDto {
   factory UserInfoDto({
-    required String id,
-    required String sub,
     required String email,
     required String name,
     required String picture,
-    required String login_at,
-    required String created_at,
+    required String address,
+    required List reviews,
+    required List order,
   }) = _UserInfoDto;
 
-  factory UserInfoDto.fromJson(Map<String, dynamic> json) =>
-      _$UserInfoDtoFromJson(json);
+  factory UserInfoDto.fromJson(Map<String, dynamic> json) => _$UserInfoDtoFromJson(json);
 }

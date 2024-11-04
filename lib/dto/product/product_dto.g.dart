@@ -15,7 +15,10 @@ _$ProductDtoImpl _$$ProductDtoImplFromJson(Map<String, dynamic> json) =>
       option: (json['option'] as List<dynamic>)
           .map((e) => ProductOptionDto.fromJson(e as Map<String, dynamic>))
           .toList(),
+      title: json['title'] as String,
       content: json['content'] as String,
+      images:
+          (json['images'] as List<dynamic>).map((e) => e as String).toList(),
     );
 
 Map<String, dynamic> _$$ProductDtoImplToJson(_$ProductDtoImpl instance) =>
@@ -25,7 +28,9 @@ Map<String, dynamic> _$$ProductDtoImplToJson(_$ProductDtoImpl instance) =>
       'rating': instance.rating,
       'status': _$ProductStateEnumMap[instance.status]!,
       'option': instance.option,
+      'title': instance.title,
       'content': instance.content,
+      'images': instance.images,
     };
 
 const _$ProductStateEnumMap = {
