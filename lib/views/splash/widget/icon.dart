@@ -30,10 +30,12 @@ class _IconState extends State<_Icon> with TickerProviderStateMixin {
     tts.setLanguage('ko-KR');
     tts.setSpeechRate(0.5);
     _animationController.forward();
+    fetcApi();
     Future.delayed(
       const Duration(milliseconds: 3000),
       () {
-        if (accessToken == null) {
+        refreshToken = pref.getString('refreshToken');
+        if (refreshToken == null) {
           Navigator.pushAndRemoveUntil(
             // ignore: use_build_context_synchronously
             context,
@@ -48,7 +50,7 @@ class _IconState extends State<_Icon> with TickerProviderStateMixin {
             (predicate) => false,
           );
         } else {
-          fetcApi();
+          final refreshResult = AuthApi().refreshToken(refreshToken!);
           Navigator.pushAndRemoveUntil(
             // ignore: use_build_context_synchronously
             context,

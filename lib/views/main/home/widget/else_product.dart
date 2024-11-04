@@ -6,7 +6,8 @@ class _ElseProduct extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Set a responsive height based on screen size
-    double height = MediaQuery.of(context).size.height * 0.35; // 40% of the screen height
+    double height =
+        MediaQuery.of(context).size.height * 0.35; // 40% of the screen height
 
     return SizedBox(
       height: height, // Responsive height
@@ -14,11 +15,11 @@ class _ElseProduct extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20),
         scrollDirection: Axis.horizontal,
         itemBuilder: (BuildContext context, int index) {
-          final statusText = products[index].status == ProductState.ON_SALE ? "ON SALE" : "SOLD OUT";
+          final statusText = products[index].status;
           return ProductPreviewComponents(
             brand: products[index].title,
             goods: products[index].content,
-            discount: statusText,
+            discount: "d",
             price: products[index].price.toString(),
           );
         },

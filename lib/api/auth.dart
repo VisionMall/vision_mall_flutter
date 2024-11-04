@@ -3,6 +3,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:vision_mall/data.dart';
+import 'package:vision_mall/dto/auth/token_list_dto.dart';
 import 'package:vision_mall/dto/auth/user_info_dto.dart';
 
 class AuthApi {
@@ -22,7 +23,8 @@ class AuthApi {
       if (googleUser == null) {
         return null;
       } else {
-        final GoogleSignInAuthentication googleSignInAuthentication = await googleUser.authentication;
+        final GoogleSignInAuthentication googleSignInAuthentication =
+            await googleUser.authentication;
         return googleSignInAuthentication;
       }
     } catch (e) {
@@ -37,10 +39,11 @@ class AuthApi {
         data: jsonEncode({'token': token}),
       );
       if (response.statusCode == 200) {
-        accessToken = response.data['access_token'];
-        refreshToken = response.data['refresh_token'];
-        print(accessToken);
-        print(refreshToken);
+        final result = TokenListDto.fromJson(response.data);
+        pref.setString('accessToken', result.access_token);
+        pref.setString('refreshToken', result.refresh_token);
+        print(result.access_token);
+        print(result.refresh_token);
         return true;
       } else {
         return false;
@@ -48,6 +51,24 @@ class AuthApi {
     } catch (e) {
       print('error : $e');
       return false;
+    }
+  }
+
+  Future refreshToken(String refreshToken) async {
+    try {
+      final response = await dio.post(
+        '/refresh',
+        data: jsonEncode({'refresh_token': refreshToken}),
+      );
+      if (response.statusCode == 200) {
+        accessToken = response.data['access_token'];
+        pref.setString('accessToken', accessToken.toString());
+      } else {
+        throw Exception('리프레시에 실패했습니다.');
+      }
+    } catch (e) {
+      print('error : $e');
+      throw Exception('리프레시에 실패했습니다.');
     }
   }
 

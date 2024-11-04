@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:speech_to_text/speech_recognition_result.dart';
 import 'package:speech_to_text/speech_to_text.dart';
+import 'package:vision_mall/api/product.dart';
 import 'package:vision_mall/data.dart';
 import 'package:vision_mall/views/main/home/home_page.dart';
 import 'package:vision_mall/views/main/like/like_page.dart';
@@ -19,21 +20,21 @@ class MainPage extends StatefulWidget {
   State<MainPage> createState() => _MainPageState();
 }
 
-class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin {
+class _MainPageState extends State<MainPage>
+    with SingleTickerProviderStateMixin {
   int index = 1;
   late final TabController controller = TabController(length: 3, vsync: this);
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     controller.index = 1;
     controller.addListener(tabListener);
+    fetchApi();
   }
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     controller.removeListener(tabListener);
     controller.dispose();
@@ -54,4 +55,8 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
       bottomBar: _BottomBar(index: index, controller: controller),
     );
   }
+}
+
+void fetchApi() async {
+  products = await ProductApi().getProducts();
 }

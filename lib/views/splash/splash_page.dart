@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_tts/flutter_tts.dart';
+import 'package:vision_mall/api/auth.dart';
 import 'package:vision_mall/api/product.dart';
 import 'package:vision_mall/data.dart';
 import 'package:vision_mall/views/auth/auth_page.dart';
