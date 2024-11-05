@@ -9,17 +9,14 @@ class ProductPreviewComponents extends StatefulWidget {
     super.key,
     required this.brand,
     required this.goods,
-    required this.discount,
     required this.price,
   });
   final String brand;
   final String goods;
-  final String discount;
   final String price;
 
   @override
-  State<ProductPreviewComponents> createState() =>
-      _ProductPreviewComponentsState();
+  State<ProductPreviewComponents> createState() => _ProductPreviewComponentsState();
 }
 
 class _ProductPreviewComponentsState extends State<ProductPreviewComponents> {
@@ -27,12 +24,10 @@ class _ProductPreviewComponentsState extends State<ProductPreviewComponents> {
 
   @override
   Widget build(BuildContext context) {
-    final formattedPrice = NumberFormat('#,###')
-        .format(int.parse(widget.price.replaceAll(',', '')));
+    final formattedPrice = NumberFormat('#,###').format(int.parse(widget.price.replaceAll(',', '')));
     return GestureDetector(
       onLongPress: () {
         tts.speak('${widget.brand}. ${widget.goods}');
-        tts.speak('${widget.discount} 할인');
         tts.speak(widget.price);
       },
       onTap: () => Navigator.push(
@@ -41,11 +36,8 @@ class _ProductPreviewComponentsState extends State<ProductPreviewComponents> {
             builder: (builder) => DetailPage(
               brand: widget.brand,
               goods: widget.goods,
-              price: widget.price,
-              discount: widget.discount,
-              image:  [
-                
-              ],
+              price: formattedPrice,
+              image: const [],
             ),
           )),
       child: Container(
@@ -72,9 +64,7 @@ class _ProductPreviewComponentsState extends State<ProductPreviewComponents> {
                       });
                     },
                     icon: SvgPicture.asset(
-                      like
-                          ? 'assets/icon/heart.svg'
-                          : 'assets/icon/heart_empty.svg',
+                      like ? 'assets/icon/heart.svg' : 'assets/icon/heart_empty.svg',
                       height: 25,
                       width: 25,
                     ),
@@ -92,8 +82,7 @@ class _ProductPreviewComponentsState extends State<ProductPreviewComponents> {
                     widget.brand,
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
-                    style: const TextStyle(
-                        fontSize: 15, fontWeight: FontWeight.bold),
+                    style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                   ),
                   Text(
                     widget.goods,
@@ -107,18 +96,10 @@ class _ProductPreviewComponentsState extends State<ProductPreviewComponents> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text(
-                        widget.discount,
-                        style: const TextStyle(
-                          color: Colors.red,
-                          fontSize: 13,
-                        ),
-                      ),
                       const SizedBox(width: 5),
                       Text(
                         '$formattedPrice원',
-                        style: const TextStyle(
-                            fontSize: 13, fontWeight: FontWeight.w500),
+                        style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w500),
                       ),
                     ],
                   ),

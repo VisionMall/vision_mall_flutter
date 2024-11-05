@@ -22,6 +22,7 @@ class _IconState extends State<_Icon> with TickerProviderStateMixin {
 
   fetcApi() async {
     products = await ProductApi().getProducts();
+    userInfo = await AuthApi().info();
   }
 
   @override
@@ -35,7 +36,7 @@ class _IconState extends State<_Icon> with TickerProviderStateMixin {
       const Duration(milliseconds: 3000),
       () {
         refreshToken = pref.getString('refreshToken');
-        if (refreshToken == null) {
+        if (refreshToken == null || refreshToken == '') {
           Navigator.pushAndRemoveUntil(
             // ignore: use_build_context_synchronously
             context,

@@ -9,14 +9,12 @@ class DetailPage extends StatelessWidget {
     required this.brand,
     required this.goods,
     required this.price,
-    required this.discount,
   });
 
   final List<String> image;
   final String brand;
   final String goods;
   final String price;
-  final String discount;
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +55,6 @@ class DetailPage extends StatelessWidget {
             GestureDetector(
               onLongPress: () {
                 tts.speak('$brand. $goods');
-                tts.speak('$discount할인');
                 tts.speak(price);
               },
               child: Container(
@@ -87,14 +84,10 @@ class DetailPage extends StatelessWidget {
                           price,
                           style: const TextStyle(fontSize: 30, fontWeight: FontWeight.w600),
                         ),
-                        Row(
+                        const Row(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
                             Text(
-                              discount,
-                              style: const TextStyle(fontSize: 25, fontWeight: FontWeight.w600, color: Colors.red),
-                            ),
-                            const Text(
                               'SALE',
                               style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: Colors.red),
                             ),

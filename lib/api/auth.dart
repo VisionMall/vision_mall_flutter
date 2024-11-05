@@ -23,8 +23,7 @@ class AuthApi {
       if (googleUser == null) {
         return null;
       } else {
-        final GoogleSignInAuthentication googleSignInAuthentication =
-            await googleUser.authentication;
+        final GoogleSignInAuthentication googleSignInAuthentication = await googleUser.authentication;
         return googleSignInAuthentication;
       }
     } catch (e) {
@@ -42,6 +41,7 @@ class AuthApi {
         final result = TokenListDto.fromJson(response.data);
         pref.setString('accessToken', result.access_token);
         pref.setString('refreshToken', result.refresh_token);
+        accessToken = result.access_token;
         print(result.access_token);
         print(result.refresh_token);
         return true;
@@ -74,7 +74,9 @@ class AuthApi {
 
   Future<UserInfoDto> info() async {
     try {
-      final response = await dio.get('/info');
+      final response = await dio.get('/info', options: Options(headers: {'Authorization': 'Bearer $accessToken'}));
+      print(response.realUri);
+      print(response.data);
       return UserInfoDto.fromJson(response.data);
     } catch (e) {
       throw (e.toString());
