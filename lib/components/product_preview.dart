@@ -39,7 +39,7 @@ class _ProductPreviewComponentsState extends State<ProductPreviewComponents> {
               brand: widget.brand,
               goods: widget.goods,
               price: formattedPrice,
-              image: const [],
+              image: widget.imgae,
             ),
           )),
       child: Container(

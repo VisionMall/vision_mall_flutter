@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:dio/dio.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:vision_mall/data.dart';
 import 'package:vision_mall/dto/review/review_dto.dart';
 
 class ReviewApi {
@@ -33,7 +34,7 @@ class ReviewApi {
           headers: {'Authorization': 'Bearer $accessToken'},
         ),
       );
-      return ImageAnalyzeDto.fromJson(response.data);
+      return ReviewDto.fromJson(response.data);
     } catch (e) {
       throw (e.toString());
     }

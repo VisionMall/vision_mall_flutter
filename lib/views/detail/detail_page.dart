@@ -11,7 +11,7 @@ class DetailPage extends StatelessWidget {
     required this.price,
   });
 
-  final List<String> image;
+  final String image;
   final String brand;
   final String goods;
   final String price;
@@ -26,7 +26,7 @@ class DetailPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             GestureDetector(
-              onLongPress: () => tts.speak('상풍 이미지'),
+              onLongPress: () => tts.speak('이미지'),
               child: Stack(
                 alignment: Alignment.bottomLeft,
                 children: [
@@ -34,18 +34,8 @@ class DetailPage extends StatelessWidget {
                     color: Colors.grey,
                     height: width,
                     width: width,
+                    child: Image.network(image),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Text(
-                      image.toString(),
-                      style: const TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.black,
-                      ),
-                    ),
-                  )
                 ],
               ),
             ),
