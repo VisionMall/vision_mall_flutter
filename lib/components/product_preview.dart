@@ -18,7 +18,8 @@ class ProductPreviewComponents extends StatefulWidget {
   final String price;
 
   @override
-  State<ProductPreviewComponents> createState() => _ProductPreviewComponentsState();
+  State<ProductPreviewComponents> createState() =>
+      _ProductPreviewComponentsState();
 }
 
 class _ProductPreviewComponentsState extends State<ProductPreviewComponents> {
@@ -26,7 +27,8 @@ class _ProductPreviewComponentsState extends State<ProductPreviewComponents> {
 
   @override
   Widget build(BuildContext context) {
-    final formattedPrice = NumberFormat('#,###').format(int.parse(widget.price.replaceAll(',', '')));
+    final formattedPrice = NumberFormat('#,###')
+        .format(int.parse(widget.price.replaceAll(',', '')));
     return GestureDetector(
       onLongPress: () {
         tts.speak('${widget.brand}. ${widget.goods}');
@@ -41,7 +43,9 @@ class _ProductPreviewComponentsState extends State<ProductPreviewComponents> {
               goods: widget.goods,
               price: widget.price,
               discount: widget.discount,
-              image: 10,
+              image:  [
+                
+              ],
             ),
           )),
       child: Container(
@@ -68,7 +72,9 @@ class _ProductPreviewComponentsState extends State<ProductPreviewComponents> {
                       });
                     },
                     icon: SvgPicture.asset(
-                      like ? 'assets/icon/heart.svg' : 'assets/icon/heart_empty.svg',
+                      like
+                          ? 'assets/icon/heart.svg'
+                          : 'assets/icon/heart_empty.svg',
                       height: 25,
                       width: 25,
                     ),
@@ -86,7 +92,8 @@ class _ProductPreviewComponentsState extends State<ProductPreviewComponents> {
                     widget.brand,
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
-                    style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                    style: const TextStyle(
+                        fontSize: 15, fontWeight: FontWeight.bold),
                   ),
                   Text(
                     widget.goods,
@@ -110,7 +117,8 @@ class _ProductPreviewComponentsState extends State<ProductPreviewComponents> {
                       const SizedBox(width: 5),
                       Text(
                         '$formattedPrice원',
-                        style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w500),
+                        style: const TextStyle(
+                            fontSize: 13, fontWeight: FontWeight.w500),
                       ),
                     ],
                   ),

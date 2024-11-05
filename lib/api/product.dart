@@ -23,4 +23,13 @@ class ProductApi {
       throw (e.toString());
     }
   }
+
+  Future<ProductDto> getProduct(int id) async {
+    try {
+      final response = await dio.get('/products/$id');
+      return ProductDto.fromJson(response.data);
+    } catch (e) {
+      throw (e.toString());
+    }
+  }
 }

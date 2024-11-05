@@ -12,7 +12,7 @@ class DetailPage extends StatelessWidget {
     required this.discount,
   });
 
-  final int image;
+  final List<String> image;
   final String brand;
   final String goods;
   final String price;

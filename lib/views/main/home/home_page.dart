@@ -1,8 +1,5 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:vision_mall/components/product_preview.dart';
-import 'package:vision_mall/data.dart';
-import 'package:vision_mall/dto/product/product_dto.dart';
 part 'widget/scaffold.dart';
 part 'widget/first_product.dart';
 part './widget/else_product.dart';
