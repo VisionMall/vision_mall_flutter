@@ -5,25 +5,25 @@ import 'package:vision_mall/data.dart';
 import 'package:vision_mall/views/detail/detail_page.dart';
 
 class ProductPreviewComponents extends StatefulWidget {
-  const ProductPreviewComponents({
+  ProductPreviewComponents({
     super.key,
     required this.brand,
     required this.goods,
     required this.price,
     required this.imgae,
+    required this.like,
   });
   final String brand;
   final String goods;
   final String price;
   final String imgae;
+  bool like;
 
   @override
   State<ProductPreviewComponents> createState() => _ProductPreviewComponentsState();
 }
 
 class _ProductPreviewComponentsState extends State<ProductPreviewComponents> {
-  bool like = false;
-
   @override
   Widget build(BuildContext context) {
     final formattedPrice = NumberFormat('#,###').format(int.parse(widget.price.replaceAll(',', '')));
@@ -63,11 +63,11 @@ class _ProductPreviewComponentsState extends State<ProductPreviewComponents> {
                   child: IconButton(
                     onPressed: () {
                       setState(() {
-                        like = !like;
+                        widget.like = !widget.like;
                       });
                     },
                     icon: SvgPicture.asset(
-                      like ? 'assets/icon/heart.svg' : 'assets/icon/heart_empty.svg',
+                      widget.like ? 'assets/icon/heart.svg' : 'assets/icon/heart_empty.svg',
                       height: 25,
                       width: 25,
                     ),

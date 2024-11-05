@@ -20,6 +20,7 @@ class _ElseProduct extends StatelessWidget {
             brand: products[index].content,
             goods: products[index].title,
             price: products[index].price.toString(),
+            like: false,
           );
         },
         separatorBuilder: (BuildContext context, int index) {

@@ -13,3 +13,5 @@ TextEditingController searchTextEditingControlle = TextEditingController();
 
 late List<ProductDto> products;
 late UserInfoDto userInfo;
+
+List<bool> like = List.filled(products.length, false); // 길이가 10인, 기본값이 false인 리스트 생성

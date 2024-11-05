@@ -3,7 +3,18 @@ import 'package:vision_mall/data.dart';
 import 'package:vision_mall/views/order/order_success_page.dart';
 
 class OrderPage extends StatefulWidget {
-  const OrderPage({super.key});
+  const OrderPage({
+    super.key,
+    required this.image,
+    required this.title,
+    required this.content,
+    required this.price,
+  });
+
+  final String image;
+  final String title;
+  final String content;
+  final String price;
 
   @override
   State<OrderPage> createState() => _OrderPageState();
@@ -23,16 +34,16 @@ class _OrderPageState extends State<OrderPage> {
   void initState() {
     super.initState();
     // Set initial text for address TextField
-    addressTextEditingController.text = '광주광역시 북구 동림동 운암산 코오롱하늘체 111동 1802호';
+    addressTextEditingController.text = '광주광역시 북구 동림동 운암산 코오롱하늘체 ';
   }
 
   Widget addressWidget() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text(
-          '박유현',
-          style: TextStyle(
+        Text(
+          userInfo.name,
+          style: const TextStyle(
             fontSize: 15,
             fontWeight: FontWeight.bold,
           ),
@@ -40,9 +51,9 @@ class _OrderPageState extends State<OrderPage> {
         const SizedBox(
           height: 5,
         ),
-        const Text(
-          's23008@gsm.hs.kr',
-          style: TextStyle(
+        Text(
+          userInfo.email,
+          style: const TextStyle(
             fontSize: 13,
             fontWeight: FontWeight.w500,
             color: Color.fromARGB(255, 82, 82, 82),
@@ -77,11 +88,15 @@ class _OrderPageState extends State<OrderPage> {
           width: 100,
           height: 100,
           decoration: const BoxDecoration(color: Colors.grey),
+          child: Image.network(
+            widget.image,
+            fit: BoxFit.cover,
+          ),
         ),
         const SizedBox(
           width: 10,
         ),
-        const Expanded(
+        Expanded(
           child: SizedBox(
             height: 100,
             child: Column(
@@ -92,20 +107,20 @@ class _OrderPageState extends State<OrderPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      '아디다스',
-                      style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
+                      widget.content,
+                      style: const TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      '아디다스 삼선 점퍼 자켓',
-                      style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
+                      widget.title,
+                      style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
                     ),
                   ],
                 ),
                 Align(
                   alignment: Alignment.bottomRight,
                   child: Text(
-                    '79,000원',
-                    style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
+                    '${widget.price}원',
+                    style: const TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
                   ),
                 ),
               ],

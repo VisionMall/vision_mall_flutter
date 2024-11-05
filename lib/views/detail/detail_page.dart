@@ -37,7 +37,10 @@ class DetailPage extends StatelessWidget {
                     color: Colors.grey,
                     height: width,
                     width: width,
-                    child: Image.network(image),
+                    child: Image.network(
+                      image,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ],
               ),
@@ -112,7 +115,12 @@ class DetailPage extends StatelessWidget {
         onTap: () => Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (builder) => const OrderPage(),
+            builder: (builder) => OrderPage(
+              image: image,
+              title: goods,
+              content: brand,
+              price: price,
+            ),
           ),
         ),
         onLongPress: () => tts.speak('구매하기 버튼'),
