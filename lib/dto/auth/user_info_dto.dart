@@ -9,7 +9,7 @@ class UserInfoDto with _$UserInfoDto {
     required String email,
     required String name,
     required String picture,
-    required String address,
+    required String? address,
     required List reviews,
     required List order,
   }) = _UserInfoDto;

@@ -11,7 +11,7 @@ _$UserInfoDtoImpl _$$UserInfoDtoImplFromJson(Map<String, dynamic> json) =>
       email: json['email'] as String,
       name: json['name'] as String,
       picture: json['picture'] as String,
-      address: json['address'] as String,
+      address: json['address'] as String?,
       reviews: json['reviews'] as List<dynamic>,
       order: json['order'] as List<dynamic>,
     );

@@ -9,7 +9,6 @@ void main() async {
   await dotenv.load(fileName: '.env');
   pref = await SharedPreferences.getInstance();
   accessToken = pref.getString('access_token');
-  pref.remove('refreshToken');
   runApp(
     const MyApp(),
   );

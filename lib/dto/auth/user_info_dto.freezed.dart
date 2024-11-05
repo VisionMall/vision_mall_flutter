@@ -23,7 +23,7 @@ mixin _$UserInfoDto {
   String get email => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get picture => throw _privateConstructorUsedError;
-  String get address => throw _privateConstructorUsedError;
+  String? get address => throw _privateConstructorUsedError;
   List<dynamic> get reviews => throw _privateConstructorUsedError;
   List<dynamic> get order => throw _privateConstructorUsedError;
 
@@ -47,7 +47,7 @@ abstract class $UserInfoDtoCopyWith<$Res> {
       {String email,
       String name,
       String picture,
-      String address,
+      String? address,
       List<dynamic> reviews,
       List<dynamic> order});
 }
@@ -70,7 +70,7 @@ class _$UserInfoDtoCopyWithImpl<$Res, $Val extends UserInfoDto>
     Object? email = null,
     Object? name = null,
     Object? picture = null,
-    Object? address = null,
+    Object? address = freezed,
     Object? reviews = null,
     Object? order = null,
   }) {
@@ -87,10 +87,10 @@ class _$UserInfoDtoCopyWithImpl<$Res, $Val extends UserInfoDto>
           ? _value.picture
           : picture // ignore: cast_nullable_to_non_nullable
               as String,
-      address: null == address
+      address: freezed == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       reviews: null == reviews
           ? _value.reviews
           : reviews // ignore: cast_nullable_to_non_nullable
@@ -115,7 +115,7 @@ abstract class _$$UserInfoDtoImplCopyWith<$Res>
       {String email,
       String name,
       String picture,
-      String address,
+      String? address,
       List<dynamic> reviews,
       List<dynamic> order});
 }
@@ -136,7 +136,7 @@ class __$$UserInfoDtoImplCopyWithImpl<$Res>
     Object? email = null,
     Object? name = null,
     Object? picture = null,
-    Object? address = null,
+    Object? address = freezed,
     Object? reviews = null,
     Object? order = null,
   }) {
@@ -153,10 +153,10 @@ class __$$UserInfoDtoImplCopyWithImpl<$Res>
           ? _value.picture
           : picture // ignore: cast_nullable_to_non_nullable
               as String,
-      address: null == address
+      address: freezed == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       reviews: null == reviews
           ? _value._reviews
           : reviews // ignore: cast_nullable_to_non_nullable
@@ -192,7 +192,7 @@ class _$UserInfoDtoImpl implements _UserInfoDto {
   @override
   final String picture;
   @override
-  final String address;
+  final String? address;
   final List<dynamic> _reviews;
   @override
   List<dynamic> get reviews {
@@ -259,7 +259,7 @@ abstract class _UserInfoDto implements UserInfoDto {
       {required final String email,
       required final String name,
       required final String picture,
-      required final String address,
+      required final String? address,
       required final List<dynamic> reviews,
       required final List<dynamic> order}) = _$UserInfoDtoImpl;
 
@@ -273,7 +273,7 @@ abstract class _UserInfoDto implements UserInfoDto {
   @override
   String get picture;
   @override
-  String get address;
+  String? get address;
   @override
   List<dynamic> get reviews;
   @override
