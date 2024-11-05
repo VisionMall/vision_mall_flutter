@@ -10,10 +10,12 @@ class ProductPreviewComponents extends StatefulWidget {
     required this.brand,
     required this.goods,
     required this.price,
+    required this.imgae,
   });
   final String brand;
   final String goods;
   final String price;
+  final String imgae;
 
   @override
   State<ProductPreviewComponents> createState() => _ProductPreviewComponentsState();
@@ -47,11 +49,12 @@ class _ProductPreviewComponentsState extends State<ProductPreviewComponents> {
           children: [
             Stack(
               children: [
-                Container(
+                SizedBox(
                   height: 200,
                   width: 150,
-                  decoration: const BoxDecoration(
-                    color: Colors.grey,
+                  child: Image.network(
+                    widget.imgae,
+                    fit: BoxFit.cover,
                   ),
                 ),
                 Positioned(

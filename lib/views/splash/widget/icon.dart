@@ -34,38 +34,19 @@ class _IconState extends State<_Icon> with TickerProviderStateMixin {
     Future.delayed(
       const Duration(milliseconds: 3000),
       () {
-        refreshToken = pref.getString('refreshToken');
-        if (refreshToken == null || refreshToken == '') {
-          Navigator.pushAndRemoveUntil(
-            // ignore: use_build_context_synchronously
-            context,
-            PageRouteBuilder(
-              pageBuilder: (_, __, ___) => const AuthPage(),
-              transitionDuration: const Duration(milliseconds: 250),
-              transitionsBuilder: (_, a, __, c) => FadeTransition(
-                opacity: a,
-                child: c,
-              ),
+        Navigator.pushAndRemoveUntil(
+          // ignore: use_build_context_synchronously
+          context,
+          PageRouteBuilder(
+            pageBuilder: (_, __, ___) => const AuthPage(),
+            transitionDuration: const Duration(milliseconds: 250),
+            transitionsBuilder: (_, a, __, c) => FadeTransition(
+              opacity: a,
+              child: c,
             ),
-            (predicate) => false,
-          );
-        } else {
-          final refreshResult = AuthApi().refreshToken(refreshToken!);
-          fetcApi();
-          Navigator.pushAndRemoveUntil(
-            // ignore: use_build_context_synchronously
-            context,
-            PageRouteBuilder(
-              pageBuilder: (_, __, ___) => const MainPage(),
-              transitionDuration: const Duration(milliseconds: 250),
-              transitionsBuilder: (_, a, __, c) => FadeTransition(
-                opacity: a,
-                child: c,
-              ),
-            ),
-            (predicate) => false,
-          );
-        }
+          ),
+          (predicate) => false,
+        );
       },
     );
 

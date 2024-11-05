@@ -10,7 +10,7 @@ class _Topbar extends StatelessWidget implements PreferredSizeWidget {
       leading: Container(
         alignment: Alignment.center,
         child: const Text(
-          "박유현",
+          'BET',
           style: TextStyle(
             fontWeight: FontWeight.w600,
             fontSize: 20,

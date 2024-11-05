@@ -74,9 +74,12 @@ class AuthApi {
 
   Future<UserInfoDto> info() async {
     try {
-      final response = await dio.get('/info', options: Options(headers: {'Authorization': 'Bearer $accessToken'}));
-      print(response.realUri);
-      print(response.data);
+      final response = await dio.get(
+        '/info',
+        options: Options(
+          headers: {'Authorization': 'Bearer $accessToken'},
+        ),
+      );
       return UserInfoDto.fromJson(response.data);
     } catch (e) {
       throw (e.toString());

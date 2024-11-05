@@ -16,9 +16,8 @@ class ProductApi {
   Future<List<ProductDto>> getProducts() async {
     try {
       final response = await dio.get('/products');
-      return response.data
-          .map<ProductDto>((data) => ProductDto.fromJson(data))
-          .toList();
+      print(response.data);
+      return response.data.map<ProductDto>((data) => ProductDto.fromJson(data)).toList();
     } catch (e) {
       throw (e.toString());
     }

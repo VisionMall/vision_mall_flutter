@@ -16,6 +16,7 @@ class _ElseProduct extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           final statusText = products[index].status;
           return ProductPreviewComponents(
+            imgae: products[9].images.first,
             brand: products[index].content,
             goods: products[index].title,
             price: products[index].price.toString(),

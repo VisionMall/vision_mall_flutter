@@ -8,9 +8,9 @@ class UserPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const _Scaffold(
+    return _Scaffold(
       profile: _Profile(
-        name: '박유현',
+        name: userInfo.name,
       ),
     );
   }
