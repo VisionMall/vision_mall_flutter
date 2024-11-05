@@ -9,11 +9,11 @@ part of 'image_analyze_dto.dart';
 _$ImageAnalyzeDtoImpl _$$ImageAnalyzeDtoImplFromJson(
         Map<String, dynamic> json) =>
     _$ImageAnalyzeDtoImpl(
-      detail: json['detail'] as String,
+      result: json['result'] as String,
     );
 
 Map<String, dynamic> _$$ImageAnalyzeDtoImplToJson(
         _$ImageAnalyzeDtoImpl instance) =>
     <String, dynamic>{
-      'detail': instance.detail,
+      'result': instance.result,
     };

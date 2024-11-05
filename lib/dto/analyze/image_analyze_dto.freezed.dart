@@ -20,7 +20,7 @@ ImageAnalyzeDto _$ImageAnalyzeDtoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ImageAnalyzeDto {
-  String get detail => throw _privateConstructorUsedError;
+  String get result => throw _privateConstructorUsedError;
 
   /// Serializes this ImageAnalyzeDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -38,7 +38,7 @@ abstract class $ImageAnalyzeDtoCopyWith<$Res> {
           ImageAnalyzeDto value, $Res Function(ImageAnalyzeDto) then) =
       _$ImageAnalyzeDtoCopyWithImpl<$Res, ImageAnalyzeDto>;
   @useResult
-  $Res call({String detail});
+  $Res call({String result});
 }
 
 /// @nodoc
@@ -56,12 +56,12 @@ class _$ImageAnalyzeDtoCopyWithImpl<$Res, $Val extends ImageAnalyzeDto>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? detail = null,
+    Object? result = null,
   }) {
     return _then(_value.copyWith(
-      detail: null == detail
-          ? _value.detail
-          : detail // ignore: cast_nullable_to_non_nullable
+      result: null == result
+          ? _value.result
+          : result // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -75,7 +75,7 @@ abstract class _$$ImageAnalyzeDtoImplCopyWith<$Res>
       __$$ImageAnalyzeDtoImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String detail});
+  $Res call({String result});
 }
 
 /// @nodoc
@@ -91,12 +91,12 @@ class __$$ImageAnalyzeDtoImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? detail = null,
+    Object? result = null,
   }) {
     return _then(_$ImageAnalyzeDtoImpl(
-      detail: null == detail
-          ? _value.detail
-          : detail // ignore: cast_nullable_to_non_nullable
+      result: null == result
+          ? _value.result
+          : result // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -105,17 +105,17 @@ class __$$ImageAnalyzeDtoImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ImageAnalyzeDtoImpl implements _ImageAnalyzeDto {
-  _$ImageAnalyzeDtoImpl({required this.detail});
+  _$ImageAnalyzeDtoImpl({required this.result});
 
   factory _$ImageAnalyzeDtoImpl.fromJson(Map<String, dynamic> json) =>
       _$$ImageAnalyzeDtoImplFromJson(json);
 
   @override
-  final String detail;
+  final String result;
 
   @override
   String toString() {
-    return 'ImageAnalyzeDto(detail: $detail)';
+    return 'ImageAnalyzeDto(result: $result)';
   }
 
   @override
@@ -123,12 +123,12 @@ class _$ImageAnalyzeDtoImpl implements _ImageAnalyzeDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ImageAnalyzeDtoImpl &&
-            (identical(other.detail, detail) || other.detail == detail));
+            (identical(other.result, result) || other.result == result));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, detail);
+  int get hashCode => Object.hash(runtimeType, result);
 
   /// Create a copy of ImageAnalyzeDto
   /// with the given fields replaced by the non-null parameter values.
@@ -148,14 +148,14 @@ class _$ImageAnalyzeDtoImpl implements _ImageAnalyzeDto {
 }
 
 abstract class _ImageAnalyzeDto implements ImageAnalyzeDto {
-  factory _ImageAnalyzeDto({required final String detail}) =
+  factory _ImageAnalyzeDto({required final String result}) =
       _$ImageAnalyzeDtoImpl;
 
   factory _ImageAnalyzeDto.fromJson(Map<String, dynamic> json) =
       _$ImageAnalyzeDtoImpl.fromJson;
 
   @override
-  String get detail;
+  String get result;
 
   /// Create a copy of ImageAnalyzeDto
   /// with the given fields replaced by the non-null parameter values.

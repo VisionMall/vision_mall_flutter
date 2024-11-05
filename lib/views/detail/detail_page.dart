@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vision_mall/api/analyze.dart';
 import 'package:vision_mall/data.dart';
 import 'package:vision_mall/views/order/order_page.dart';
 
@@ -26,7 +27,9 @@ class DetailPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             GestureDetector(
-              onLongPress: () => tts.speak('이미지'),
+              onLongPress: () async => tts.speak(await AnalyzeApi()
+                  .analyze(image)
+                  .then((value) => value.result)),
               child: Stack(
                 alignment: Alignment.bottomLeft,
                 children: [
@@ -55,7 +58,8 @@ class DetailPage extends StatelessWidget {
                   children: [
                     Text(
                       brand,
-                      style: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+                      style: const TextStyle(
+                          fontSize: 13, fontWeight: FontWeight.bold),
                     ),
                     Text(
                       goods,
@@ -72,14 +76,18 @@ class DetailPage extends StatelessWidget {
                       children: [
                         Text(
                           price,
-                          style: const TextStyle(fontSize: 30, fontWeight: FontWeight.w600),
+                          style: const TextStyle(
+                              fontSize: 30, fontWeight: FontWeight.w600),
                         ),
                         const Row(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
                             Text(
                               'SALE',
-                              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: Colors.red),
+                              style: TextStyle(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.red),
                             ),
                           ],
                         ),

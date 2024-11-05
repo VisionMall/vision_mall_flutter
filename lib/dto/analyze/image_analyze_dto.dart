@@ -5,7 +5,7 @@ part 'image_analyze_dto.g.dart';
 
 @freezed
 class ImageAnalyzeDto with _$ImageAnalyzeDto {
-  factory ImageAnalyzeDto({required String detail}) = _ImageAnalyzeDto;
+  factory ImageAnalyzeDto({required String result}) = _ImageAnalyzeDto;
 
   factory ImageAnalyzeDto.fromJson(Map<String, dynamic> json) =>
       _$ImageAnalyzeDtoFromJson(json);
